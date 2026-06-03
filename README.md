@@ -38,7 +38,7 @@ Independentemente do seu sistema operacional (Windows, Linux ou macOS), siga os 
 
 1. **Clonar o repositório:**
     ```bash
-    git clone [https://github.com/Rennan-Soares/test_dog_api.git](https://github.com/Rennan-Soares/test_dog_api.git)
+    git clone https://github.com/Rennan-Soares/test_dog_api.git
     cd test_dog_api
     ```
 
