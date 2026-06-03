@@ -6,13 +6,13 @@ on:
   pull_request:
     branches: [ main, master ]
 
-# Permissões nativas para o GitHub Pages
+# Permissões nativas para o GitHub Pages conseguir publicar o site
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Garante que execuções consecutivas não entrem em conflito
+# Evita conflitos caso você faça vários pushes seguidos
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -38,6 +38,8 @@ jobs:
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
+      with:
+        enablement: true # Ativa o Pages no repositório automaticamente caso não esteja ativo
 
     - name: Generate Allure Report
       uses: simple-elf/allure-report-action@master
@@ -45,15 +47,14 @@ jobs:
       id: allure-report
       with:
         allure_results: target/allure-results
-        gh_pages: .allure-env # Pasta temporária interna
+        gh_pages: gh-pages
         allure_report: allure-report
-        allure_history: allure-history
 
     - name: Upload Artifact
       uses: actions/upload-pages-artifact@v3
       if: always()
       with:
-        path: 'allure-history/allure-report' # Sobe a pasta do relatório direto para o Pages
+        path: 'allure-report' # Aponta exatamente para a pasta onde o Allure gera o site
 
   deploy:
     runs-on: ubuntu-latest
