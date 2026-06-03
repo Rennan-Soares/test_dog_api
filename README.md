@@ -1,3 +1,5 @@
+[![API Automation CI](https://github.com/Rennan-Soares/test_dog_api/actions/workflows/ci.yml/badge.svg)](https://github.com/Rennan-Soares/test_dog_api/actions/workflows/ci.yml)
+
 # 🐕 Automação de Testes de API - Dog API
 
 Este repositório contém a suíte de testes automatizados para validar os endpoints da [Dog API](https://dog.ceo/dog-api/documentation). O objetivo do projeto é garantir o funcionamento correto das integrações voltadas para visualização de raças e imagens de cães.
